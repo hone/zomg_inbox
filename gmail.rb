@@ -5,7 +5,8 @@ require 'mail'
 @imap = Net::IMAP.new(ENV['HOST'], ENV['PORT'], ENV['SSL'] == 'true' ? true : false)
 @imap.login(ENV['USERNAME'], ENV['PASSWORD'])
 
-@imap.select("INBOX")
+# so we don't explicitly mark them as read
+@imap.examine("INBOX")
 
 archive_messages = []
 @imap.fetch(1..-1, "(UID BODY[HEADER.FIELDS (SUBJECT)] BODY[HEADER.FIELDS (TO)])").each do |message|
@@ -25,6 +26,7 @@ archive_messages = []
 end
 
 # archive email
+@imap.select("INBOX")
 @imap.store(archive_messages, "+FLAGS", [:Deleted])
 
 @imap.disconnect
