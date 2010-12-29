@@ -25,6 +25,6 @@ archive_messages = []
 end
 
 # archive email
-@imap.store(archived_messages, "+FLAGS", [:Deleted])
+@imap.store(archive_messages, "+FLAGS", [:Deleted])
 
 @imap.disconnect
