@@ -1,5 +1,6 @@
 require 'net/imap'
 require 'mail'
+require File.join(File.dirname(__FILE__), '../zomg_inbox/traffic_controller')
 
 class ImapJob
   @queue = :imap
@@ -17,7 +18,7 @@ class ImapJob
         mid     = message.seqno
         uid     = message.attr["UID"]
         subject = message.attr["BODY[HEADER.FIELDS (SUBJECT)]"].sub("Subject ", '').chomp.chomp
-        folder  = Mail::Address.new(message.attr["BODY[HEADER.FIELDS (TO)]"].sub("To: ", '').chomp.chomp).local.capitalize
+        folder  = TrafficController.new(message.attr).destination
 
         if not imap.list('OtherInbox/', folder)
           puts "Creating folder OtherInbox/#{folder}"
