@@ -1,0 +1,20 @@
+Return-Path: <blockbusteronline@blockbuster.com>
+X-Original-To: blockbuster@hone.otherinbox.com
+Delivered-To: otherinbox@mail.otherinbox.com
+Received: from smtp2.online.blockbuster.com (smtp2.online.blockbuster.com
+ [129.33.92.80]) by mail.otherinbox.com (Postfix) with ESMTP id 269FC45E07 for
+ <blockbuster@hone.otherinbox.com>; Thu, 29 Jan 2009 05:52:51 -0500 (EST)
+Received: from nbaxa030 (bbusap005 [10.15.147.203]) by
+ smtp2.online.blockbuster.com (AIX5.2/8.11.6p2/8.11.0) with ESMTP id
+ n0TAqp012701818 for <blockbuster@hone.otherinbox.com>; Thu, 29 Jan 2009
+ 10:52:51 GMT
+Date: Thu, 29 Jan 2009 10:52:51 GMT
+Message-ID: <1714276685.1233226371455.JavaMail.bbadmin@nbaxa030>
+From: blockbusteronline@blockbuster.com
+To: blockbuster@hone.otherinbox.com
+Subject: Your e-coupon is now available!
+Mime-Version: 1.0
+Content-Type: multipart/related; 
+ boundary="----=_Part_38485_1680689485.1233226371452"
+X-Evolution-Source: imap://hone@imap.otherinbox.com/
+

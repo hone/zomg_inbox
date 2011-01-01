@@ -4,9 +4,14 @@ require File.join(File.dirname(__FILE__), "../../../lib/zomg_inbox/traffic_contr
 describe TrafficController do
   describe "#destination" do
     context "has no List ID" do
-      subject { TrafficController.new('BODY[HEADER.FIELDS (TO)]' => 'To: Fred Flinstone <foo@blarg.oib.com>') }
+      subject do
+        TrafficController.new(File.read(File.join(File.dirname(__FILE__), '../../resources/blockbuster_header.txt')))
+      end
+
       it "returns the to to address" do
-        subject.destination.should == "Foo"
+        subject.destination.should == "Blockbuster"
+      end
+    end
       end
     end
   end

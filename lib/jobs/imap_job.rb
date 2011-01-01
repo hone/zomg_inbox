@@ -12,13 +12,13 @@ class ImapJob
     imap.select("INBOX")
 
     archive_messages = []
-    messages = imap.fetch(1..-1, "(UID BODY.PEEK[HEADER.FIELDS (SUBJECT)] BODY.PEEK[HEADER.FIELDS (TO)])")
+    messages = imap.fetch(1..-1, "(UID BODY.PEEK[HEADER.FIELDS (SUBJECT)] BODY.PEEK[HEADER])")
     if messages
       messages.each do |message|
         mid     = message.seqno
         uid     = message.attr["UID"]
         subject = message.attr["BODY[HEADER.FIELDS (SUBJECT)]"].sub("Subject ", '').chomp.chomp
-        folder  = TrafficController.new(message.attr).destination
+        folder  = TrafficController.new(message.attr["BODY[HEADER]"]).destination
 
         if not imap.list('OtherInbox/', folder)
           puts "Creating folder OtherInbox/#{folder}"
