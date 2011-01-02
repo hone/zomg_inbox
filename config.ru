@@ -3,6 +3,7 @@ require 'warden'
 require 'warden-googleapps'
 require 'resque/server'
 require File.join(File.dirname(__FILE__), 'config/redis_setup')
+require File.join(File.dirname(__FILE__), 'web')
 
 map "/resque" do
   if ENV['GOOGLE_APPS_DOMAIN']
@@ -24,4 +25,8 @@ map "/resque" do
   end
 
   run Resque::Server.new
+end
+
+map "/" do
+  run ZomgInboxWeb
 end

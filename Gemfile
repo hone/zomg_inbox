@@ -5,6 +5,8 @@ gem "resque"
 gem "rake"
 gem "clockwork"
 gem "warden-googleapps"
+gem "sinatra"
+gem "haml"
 
 group :production do
   gem "thin"

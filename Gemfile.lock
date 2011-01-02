@@ -8,6 +8,7 @@ GEM
     daemons (1.1.0)
     diff-lcs (1.1.2)
     eventmachine (0.12.10)
+    haml (3.0.25)
     i18n (0.5.0)
     json (1.4.6)
     linecache19 (0.5.11)
@@ -66,11 +67,13 @@ PLATFORMS
 
 DEPENDENCIES
   clockwork
+  haml
   mail
   rake
   resque
   rspec-core (= 2.3.0)
   rspec-expectations (= 2.3.0)
   ruby-debug19
+  sinatra
   thin
   warden-googleapps
