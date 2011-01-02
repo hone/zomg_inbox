@@ -1,0 +1,81 @@
+Delivered-To: jhu_acm@hone.otherinbox.com
+Received: by 10.100.164.14 with SMTP id m14cs298662ane; Wed, 29 Dec 2010
+ 00:21:49 -0800 (PST)
+Received: by 10.224.45.68 with SMTP id d4mr13859656qaf.115.1293610908799; Wed,
+ 29 Dec 2010 00:21:48 -0800 (PST)
+Return-Path: <acm-bounces@acm.jhu.edu>
+Received: from batman.acm.jhu.edu (batman.acm.jhu.edu [128.220.251.35]) by
+ mx.google.com with ESMTPS id e7si26212800qck.203.2010.12.29.00.21.48
+ (version=TLSv1/SSLv3 cipher=RC4-MD5); Wed, 29 Dec 2010 00:21:48 -0800 (PST)
+Received-SPF: pass (google.com: best guess record for domain of
+ acm-bounces@acm.jhu.edu designates 128.220.251.35 as permitted sender)
+ client-ip=128.220.251.35;
+Authentication-Results: mx.google.com; spf=pass (google.com: best guess record
+ for domain of acm-bounces@acm.jhu.edu designates 128.220.251.35 as permitted
+ sender) smtp.mail=acm-bounces@acm.jhu.edu; dkim=neutral (body hash did not
+ verify) header.i=@gmail.com
+Received: from batman.acm.jhu.edu (localhost.localdomain [127.0.0.1]) by
+ batman.acm.jhu.edu (Postfix) with ESMTP id 6D1E3CFE10; Wed, 29 Dec 2010
+ 03:21:47 -0500 (EST)
+Received: by batman.acm.jhu.edu (Postfix, from userid 99) id 5F06DCFE11; Wed,
+ 29 Dec 2010 03:21:47 -0500 (EST)
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on centaur.acm.jhu.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=5.0
+ tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+ DKIM_SIGNED,FREEMAIL_FROM,HTML_MESSAGE,RCVD_IN_DNSWL_LOW,T_DKIM_INVALID
+ autolearn=unavailable version=3.3.1
+Received: from centaur.acm.jhu.edu (localhost.localdomain [127.0.0.1]) by
+ batman.acm.jhu.edu (Postfix) with ESMTP id 732D3CFE0F; Wed, 29 Dec 2010
+ 03:21:37 -0500 (EST)
+X-Original-To: acm@acm.jhu.edu
+Delivered-To: acm@acm.jhu.edu
+Received: from batman.acm.jhu.edu (localhost.localdomain [127.0.0.1]) by
+ batman.acm.jhu.edu (Postfix) with ESMTP id 14B97CFDDF for <acm@acm.jhu.edu>;
+ Wed, 29 Dec 2010 03:21:34 -0500 (EST)
+Received: by batman.acm.jhu.edu (Postfix, from userid 99) id E65C6CFE0E; Wed,
+ 29 Dec 2010 03:21:33 -0500 (EST)
+Received: from mail-wy0-f169.google.com (mail-wy0-f169.google.com
+ [74.125.82.169]) by batman.acm.jhu.edu (Postfix) with ESMTP id 5CBCBCFDDF for
+ <acm@acm.jhu.edu>; Wed, 29 Dec 2010 03:21:28 -0500 (EST)
+Received: by wyj26 with SMTP id 26so10270980wyj.0 for <acm@acm.jhu.edu>; Wed,
+ 29 Dec 2010 00:21:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=gamma;
+ h=domainkey-signature:mime-version:received:received:date:message-id
+ :subject:from:to:content-type;
+ bh=3sfUzXUUkTLV+n4X5Nw+b4u9PELfJnH1uVshzjcYfm0=;
+ b=uMa7zKERj/khni7lykWd2YuEhbRK1wUS55dTjmqD38nsD5om5kU7u8SehDavRFX1Yv
+ bj0I/d37zmvUGUo9x5Iz4NcLNkkq19DeMGuqxWdlvlxn0CJJUV0n4qU75+c11Adb5vR7
+ K9YsaCts7StHNZEwV4ZV2UZtRuT3U0Tie8No4=
+DomainKey-Signature: a=rsa-sha1; c=nofws; d=gmail.com; s=gamma;
+ h=mime-version:date:message-id:subject:from:to:content-type;
+ b=cQuuZRvq+ULQYIdT0rbOwoqfmTahaxhDHnuPdLa4Xd9DYfUb7FZEbqyae2NlVochmf
+ EABGLfWceHTKrlTHE0PZBGrZDP1xghmDmi9L85Jsv9lEmKmZtXBDUd2n+KUErauya9xf
+ tZa5KsA5+FxQQ80GW8w/+SFRIrkBTorgu++DM=
+MIME-Version: 1.0
+Received: by 10.216.175.132 with SMTP id z4mr6385218wel.11.1293610886657; Wed,
+ 29 Dec 2010 00:21:26 -0800 (PST)
+Received: by 10.216.182.199 with HTTP; Wed, 29 Dec 2010 00:21:26 -0800 (PST)
+Date: Wed, 29 Dec 2010 00:21:26 -0800
+Message-ID: <AANLkTikWjKQFmRKCGNMmmiMx0_H6+PANhL8N6jv8H8aL@mail.gmail.com>
+From: Ian Miers <imichaelmiers@gmail.com>
+To: ACM Discussion <acm@acm.jhu.edu>
+X-Virus-Scanned: ClamAV using ClamSMTP
+Subject: [ACM] open source licenses
+X-BeenThere: acm@acm.jhu.edu
+X-Mailman-Version: 2.1.12
+Precedence: list
+Reply-To: ACM Discussion <acm@acm.jhu.edu>
+List-Id: ACM Discussion <acm.acm.jhu.edu>
+List-Unsubscribe: <http://lists.acm.jhu.edu/mailman/options/acm>,
+ <mailto:acm-request@acm.jhu.edu?subject=unsubscribe>
+List-Archive: <http://lists.acm.jhu.edu/pipermail/acm/>
+List-Post: <mailto:acm@acm.jhu.edu>
+List-Help: <mailto:acm-request@acm.jhu.edu?subject=help>
+List-Subscribe: <http://lists.acm.jhu.edu/mailman/listinfo/acm>,
+ <mailto:acm-request@acm.jhu.edu?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============1889107075=="
+Sender: acm-bounces@acm.jhu.edu
+Errors-To: acm-bounces@acm.jhu.edu
+X-Virus-Scanned: ClamAV using ClamSMTP
+

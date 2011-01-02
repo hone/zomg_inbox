@@ -1,0 +1,105 @@
+Delivered-To: heroku_list@hone.otherinbox.com
+Received: by 10.100.164.14 with SMTP id m14cs287113ane; Tue, 28 Dec 2010
+ 15:14:50 -0800 (PST)
+Received: by 10.224.11.143 with SMTP id t15mr13417475qat.168.1293578090694;
+ Tue, 28 Dec 2010 15:14:50 -0800 (PST)
+Return-Path: <heroku+bncCJCcx5OKExDm3unoBBoEIF8VKg@googlegroups.com>
+Received: from mail-qw0-f62.google.com (mail-qw0-f62.google.com
+ [209.85.216.62]) by mx.google.com with ESMTP id
+ c41si10459953vcs.56.2010.12.28.15.14.49; Tue, 28 Dec 2010 15:14:49 -0800
+ (PST)
+Received-SPF: pass (google.com: domain of
+ heroku+bncCJCcx5OKExDm3unoBBoEIF8VKg@googlegroups.com designates
+ 209.85.216.62 as permitted sender) client-ip=209.85.216.62;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of
+ heroku+bncCJCcx5OKExDm3unoBBoEIF8VKg@googlegroups.com designates
+ 209.85.216.62 as permitted sender)
+ smtp.mail=heroku+bncCJCcx5OKExDm3unoBBoEIF8VKg@googlegroups.com; dkim=pass
+ (test mode) header.i=@googlegroups.com
+Received: by qwk4 with SMTP id 4sf19439722qwk.27 for
+ <heroku_list@hone.otherinbox.com>; Tue, 28 Dec 2010 15:14:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=googlegroups.com;
+ s=beta; h=domainkey-signature:received:x-beenthere:received:received:received
+ :received:received-spf:received:received:received:x-yahoo-newman-id
+ :received:received:x-yahoo-smtp:x-ymail-osg:x-yahoo-newman-property
+ :message-id:date:from:user-agent:mime-version:to:subject
+ :x-original-sender:x-original-authentication-results:reply-to
+ :precedence:mailing-list:list-id:list-post:list-help:list-archive
+ :sender:list-subscribe:list-unsubscribe:content-type;
+ bh=O3a5++L+f7TVqT21WW3ZDzylX6I8brVte7Bw8GDbPMU=;
+ b=JRI9qKZ8drCc1PimM19JQfv1auguN0Ap3QIuVeNeyrQ+6YmlFTd8vwWStyx/p2Vsz+
+ oX4AefDKy82S2YXcJAUnATlgYjVEEqwrv6n4ynXOK2mR7gO4nlhZ8I1oErwJpAaF0LsC
+ uevx1gXoLsDfLUrYXXLybCG/fa8wW3xi3/IVA=
+DomainKey-Signature: a=rsa-sha1; c=nofws; d=googlegroups.com; s=beta;
+ h=x-beenthere:received-spf:x-yahoo-newman-id:x-yahoo-smtp:x-ymail-osg
+ :x-yahoo-newman-property:message-id:date:from:user-agent
+ :mime-version:to:subject:x-original-sender
+ :x-original-authentication-results:reply-to:precedence:mailing-list
+ :list-id:list-post:list-help:list-archive:sender:list-subscribe
+ :list-unsubscribe:content-type;
+ b=zrIFA/IfVBpNW4cY5dJwAbGesfeICfWWJEai9ev+ammKBxqKG0fkjX8xC0WyPwfevt
+ 8b7q4baJcBkSPl4OC4ZRIG8ObulF16JFYOH5vzN/jrMCgeweNULQ690IiNgWdySjPYZW
+ c7/xkPhL4CjZTbu8KNFdc3N03XmdFt4Dfmjuc=
+Received: by 10.224.2.77 with SMTP id 13mr85250qai.4.1293578088114; Tue, 28
+ Dec 2010 15:14:48 -0800 (PST)
+X-BeenThere: heroku@googlegroups.com
+Received: by 10.224.126.81 with SMTP id b17ls1079980qas.4.p; Tue, 28 Dec 2010
+ 15:14:45 -0800 (PST)
+Received: by 10.224.2.210 with SMTP id 18mr1381704qak.2.1293578085735; Tue, 28
+ Dec 2010 15:14:45 -0800 (PST)
+Received: by 10.224.2.210 with SMTP id 18mr1381703qak.2.1293578085693; Tue, 28
+ Dec 2010 15:14:45 -0800 (PST)
+Received: from nm26.bullet.mail.ac4.yahoo.com (nm26.bullet.mail.ac4.yahoo.com
+ [98.139.52.223]) by gmr-mx.google.com with SMTP id
+ 19si2618641qci.1.2010.12.28.15.14.44; Tue, 28 Dec 2010 15:14:44 -0800 (PST)
+Received-SPF: neutral (google.com: 98.139.52.223 is neither permitted nor
+ denied by best guess record for domain of weyus@att.net)
+ client-ip=98.139.52.223;
+Received: from [98.139.52.191] by nm26.bullet.mail.ac4.yahoo.com with NNFMP;
+ 28 Dec 2010 23:14:44 -0000
+Received: from [98.139.52.134] by tm4.bullet.mail.ac4.yahoo.com with NNFMP; 28
+ Dec 2010 23:14:44 -0000
+Received: from [127.0.0.1] by omp1017.mail.ac4.yahoo.com with NNFMP; 28 Dec
+ 2010 23:14:44 -0000
+X-Yahoo-Newman-Id: 530889.58846.bm@omp1017.mail.ac4.yahoo.com
+Received: (qmail 1392 invoked from network); 28 Dec 2010 23:14:44 -0000
+Received: from [192.168.10.227] (weyus@76.30.86.218 with plain) by
+ smtp105.sbc.mail.mud.yahoo.com with SMTP; 28 Dec 2010 15:14:43 -0800 PST
+X-Yahoo-SMTP: oYH0ZkmswBA_sNgU1nTJ2dWcWuORwAXkGGI-
+X-YMail-OSG: F9gR_lgVM1mNy8Q4srN0_hLd4ZkrmSXkiIbEOCRmLSFPE4A
+ Iv5o5sNeY7q5dr5VdDKz7OI2fGOo1pWmEEbzH.a0TDVKFBN25YyXY44fx9yA
+ bisckt5NEv8Va3pySYhv5lhEqBjKLjThIT3ZYYpWzIUxpVcFm9h7IAvjlaZN
+ ItXEkcVuHVQ2hS2Jpb0KkquK6fXkav2AEe33Kt.QjH1oDM9CHDd3JaeqpFzO
+ REEN6ieSojeVIVLtv.KtwNzh9u1z743yWwtTVkOU8JyQzanRQcTdWOJMk2PA
+ W_yLrIAgn2zwcumG7yg4j7ByPcqPQjGtIT3FDSPEcrvG9
+X-Yahoo-Newman-Property: ymail-3
+Message-ID: <4D1A6F61.9060207@att.net>
+Date: Tue, 28 Dec 2010 17:14:41 -0600
+From: Wes Gamble <weyus@att.net>
+User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US;
+ rv:1.9.2.13) Gecko/20101207 Thunderbird/3.1.7
+MIME-Version: 1.0
+To: Heroku <heroku@googlegroups.com>
+Subject: DATABASE_URL vs. SHARED_DATABASE_URL
+X-Original-Sender: weyus@att.net
+X-Original-Authentication-Results: gmr-mx.google.com; spf=neutral (google.com:
+ 98.139.52.223 is neither permitted nor denied by best guess record for domain
+ of weyus@att.net) smtp.mail=weyus@att.net; dkim=pass header.i=@att.net
+Reply-To: heroku@googlegroups.com
+Precedence: list
+Mailing-list: list heroku@googlegroups.com; contact
+ heroku+owners@googlegroups.com
+List-ID: <heroku.googlegroups.com>
+List-Post: <http://groups.google.com/group/heroku/post?hl=en_US>,
+ <mailto:heroku@googlegroups.com>
+List-Help: <http://groups.google.com/support/?hl=en_US>,
+ <mailto:heroku+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/heroku?hl=en_US>
+Sender: heroku@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/heroku/subscribe?hl=en_US>,
+ <mailto:heroku+subscribe@googlegroups.com>
+List-Unsubscribe: <http://groups.google.com/group/heroku/subscribe?hl=en_US>,
+ <mailto:heroku+unsubscribe@googlegroups.com>
+Content-Type: multipart/alternative;
+ boundary="------------070406030602060308040408"
+
