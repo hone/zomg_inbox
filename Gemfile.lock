@@ -2,12 +2,16 @@ GEM
   remote: http://rubygems.org/
   specs:
     activesupport (3.0.3)
+    archive-tar-minitar (0.5.2)
     clockwork (0.2.1)
+    columnize (0.3.2)
     daemons (1.1.0)
     diff-lcs (1.1.2)
     eventmachine (0.12.10)
     i18n (0.5.0)
     json (1.4.6)
+    linecache19 (0.5.11)
+      ruby_core_source (>= 0.1.4)
     mail (2.2.13)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -28,7 +32,17 @@ GEM
     rspec-core (2.3.0)
     rspec-expectations (2.3.0)
       diff-lcs (~> 1.1.2)
+    ruby-debug-base19 (0.11.24)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
     ruby-openid (2.1.8)
+    ruby_core_source (0.1.4)
+      archive-tar-minitar (>= 0.5.2)
     sinatra (1.1.2)
       rack (~> 1.1)
       tilt (~> 1.2)
@@ -57,5 +71,6 @@ DEPENDENCIES
   resque
   rspec-core (= 2.3.0)
   rspec-expectations (= 2.3.0)
+  ruby-debug19
   thin
   warden-googleapps

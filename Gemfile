@@ -13,4 +13,5 @@ end
 group :development do
   gem 'rspec-core',        '2.3.0'
   gem 'rspec-expectations', '2.3.0'
+  gem 'ruby-debug19'
 end
