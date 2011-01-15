@@ -54,6 +54,16 @@ describe TrafficController do
         end
       end
 
+      context "does not match heuristics" do
+        subject do
+          TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/bad_list_id.txt')))
+        end
+
+        it "has no destination" do
+          subject.destination.should be_nil
+        end
+      end
+
     end
   end
 end

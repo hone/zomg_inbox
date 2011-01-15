@@ -15,10 +15,15 @@ class TrafficController
     # check for mailing list
     if @headers['List-Id']
       match_data = /(?<list_name>[\w\d-_\s]*?) ?<(?<list_id>[\w\d-.]+)>/.match(@headers['List-Id'].value.to_s)
-      if match_data[:list_name].empty?
-        match_data[:list_id].split('.').first.capitalize
+      if match_data
+        if match_data[:list_name].empty?
+          match_data[:list_id].split('.').first.capitalize
+        else
+          match_data[:list_name]
+        end
       else
-        match_data[:list_name]
+        puts "Could not parse mailing list: #{@headers['List-Id']}"
+        return nil
       end
     # default to To address if there isn't something better
     else
