@@ -45,12 +45,24 @@ describe TrafficController do
       end
 
       context "without a list name" do
-        subject do
-          TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/heroku_header.txt')))
+        context "heroku header" do
+          subject do
+            TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/heroku_header.txt')))
+          end
+
+          it "has a destination of the List ID" do
+            subject.destination.should == "Heroku"
+          end
         end
 
-        it "has a destination of the List ID" do
-          subject.destination.should == "Heroku"
+        context "ruby header" do
+          subject do
+            TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/ruby_header.txt')))
+          end
+
+          it "has a destination of the List ID" do
+            subject.destination.should == "Ruby"
+          end
         end
       end
 

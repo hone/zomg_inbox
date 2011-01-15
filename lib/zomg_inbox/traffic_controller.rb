@@ -14,10 +14,10 @@ class TrafficController
   def destination
     # check for mailing list
     if @headers['List-Id']
-      match_data = /(?<list_name>[\w\d\s_-]*?) ?<(?<list_id>[\w\d.-]+)>/.match(@headers['List-Id'].value.to_s)
+      match_data = /(?<list_name>[\w\d\s_-]*?) ?<(?<list_id>[\w\d.@-]+)>/.match(@headers['List-Id'].value.to_s)
       if match_data
         if match_data[:list_name].empty?
-          match_data[:list_id].split('.').first.capitalize
+          match_data[:list_id].split('@').first.split('.').first.capitalize
         else
           match_data[:list_name]
         end
