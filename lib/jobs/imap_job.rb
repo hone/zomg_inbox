@@ -21,14 +21,16 @@ class ImapJob
         tc      = TrafficController.new(uid, headers)
         folder  = tc.destination
 
-        if not imap.list('OtherInbox/', folder)
-          puts "Creating folder OtherInbox/#{folder}"
-          imap.create("OtherInbox/#{folder}")
-        end
+        if folder
+          if not imap.list('OtherInbox/', folder)
+            puts "Creating folder OtherInbox/#{folder}"
+            imap.create("OtherInbox/#{folder}")
+          end
 
-        puts tc.process_log
-        imap.copy(mid, "OtherInbox/#{folder}")
-        archive_messages << mid
+          puts tc.process_log
+          imap.copy(mid, "OtherInbox/#{folder}")
+          archive_messages << mid
+        end
       end
     end
 
