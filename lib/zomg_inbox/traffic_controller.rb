@@ -22,7 +22,7 @@ class TrafficController
           match_data[:list_name]
         end
       else
-        puts "Could not parse mailing list: #{@headers['List-Id']}"
+        puts "Could not parse mailing list: #{@headers['List-Id'].value.to_s}"
         return nil
       end
     # default to To address if there isn't something better
