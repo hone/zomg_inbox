@@ -7,6 +7,8 @@ gem "clockwork"
 gem "warden-googleapps"
 gem "sinatra"
 gem "haml"
+gem "oauth"
+gem "yajl-ruby", :require => 'yajl'
 
 group :production do
   gem "thin"
