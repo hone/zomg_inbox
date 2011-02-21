@@ -44,6 +44,8 @@ GEM
     ruby-openid (2.1.8)
     ruby_core_source (0.1.4)
       archive-tar-minitar (>= 0.5.2)
+    shotgun (0.8)
+      rack (>= 1.0)
     sinatra (1.1.2)
       rack (~> 1.1)
       tilt (~> 1.2)
@@ -74,6 +76,7 @@ DEPENDENCIES
   rspec-core (= 2.3.0)
   rspec-expectations (= 2.3.0)
   ruby-debug19
+  shotgun
   sinatra
   thin
   warden-googleapps
