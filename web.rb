@@ -43,7 +43,6 @@ class ZomgInboxWeb < Sinatra::Base
   end
 
   get "/request" do
-    STDOUT.puts "#{request.scheme}://#{request.host}:#{request.port}/auth"
     @request_token = @consumer.get_request_token(:oauth_callback => "#{request.scheme}://#{request.host}:#{request.port}/auth")
     session[:oauth][:request_token] = @request_token.token
     session[:oauth][:request_token_secret] = @request_token.secret
