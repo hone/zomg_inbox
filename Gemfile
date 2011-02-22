@@ -9,6 +9,7 @@ gem "sinatra"
 gem "haml"
 gem "oauth"
 gem "yajl-ruby", :require => 'yajl'
+gem "couchrest"
 
 group :production do
   gem "thin"
