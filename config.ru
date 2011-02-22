@@ -5,6 +5,8 @@ require 'resque/server'
 require File.join(File.dirname(__FILE__), 'config/redis_setup')
 require File.join(File.dirname(__FILE__), 'web')
 
+use Rack::CommonLogger
+
 map "/resque" do
   if ENV['GOOGLE_APPS_DOMAIN']
     require File.join(File.dirname(__FILE__), 'lib/resque/server')
