@@ -1,13 +1,18 @@
 require 'net/imap'
 require 'mail'
+require 'gmail_xoauth'
 require File.join(File.dirname(__FILE__), '../zomg_inbox/traffic_controller')
 
 class ImapJob
   @queue = :imap
 
-  def self.perform(host, port, ssl, username, password)
+  def self.perform(host, port, ssl, username, token, token_secret)
     imap = Net::IMAP.new(host, port, ssl)
-    imap.login(username, password)
+    imap.authenticate('XOAUTH', username,
+      consumer_key: ENV['CONSUMER_KEY'],
+      consumer_secret: ENV['CONSUMER_SECRET'],
+      token: token,
+      token_secret: token_secret)
 
     imap.select("INBOX")
 

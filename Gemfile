@@ -10,6 +10,7 @@ gem "haml"
 gem "oauth"
 gem "yajl-ruby", :require => 'yajl'
 gem "couchrest"
+gem "gmail_xoauth"
 
 group :production do
   gem "thin"
