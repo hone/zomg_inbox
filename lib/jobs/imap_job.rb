@@ -6,13 +6,13 @@ require File.join(File.dirname(__FILE__), '../zomg_inbox/traffic_controller')
 class ImapJob
   @queue = :imap
 
-  def self.perform(host, port, ssl, username, token, token_secret)
+  def self.perform(host, port, ssl, user)
     imap = Net::IMAP.new(host, port, ssl)
-    imap.authenticate('XOAUTH', username,
+    imap.authenticate('XOAUTH', user['email'],
       consumer_key: ENV['CONSUMER_KEY'],
       consumer_secret: ENV['CONSUMER_SECRET'],
-      token: token,
-      token_secret: token_secret)
+      token: user['token'],
+      token_secret: user['token_secret'])
 
     imap.select("INBOX")
 
@@ -27,13 +27,15 @@ class ImapJob
         folder  = tc.destination
 
         if folder
-          if not imap.list('OtherInbox/', folder)
-            puts "Creating folder OtherInbox/#{folder}"
-            imap.create("OtherInbox/#{folder}")
+          prefix = user['prefix'].to_s.empty? ? '' : "#{user['prefix']}/"
+          path = prefix + folder
+          if not imap.list(prefix, folder)
+            puts "Creating folder #{path}"
+            imap.create(path)
           end
 
           puts tc.process_log
-          imap.copy(mid, "OtherInbox/#{folder}")
+          imap.copy(mid, path)
           archive_messages << mid
         end
       end

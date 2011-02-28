@@ -9,12 +9,9 @@ include Clockwork
 db = CONFIG[:couchdb]
 
 every(5.minutes, 'run ImapJob') do |job|
-  rows = db.view("user/emails")["rows"]
-  if rows.any?
-    rows.each do |row|
-      doc = row['value']
-      puts "Processing account #{doc['email']}"
-      Resque.enqueue(ImapJob, ENV['HOST'], ENV['IMAP_PORT'], ENV['SSL'] == 'true' ? true : false, doc['email'], doc['token'], doc['token_secret'])
-    end
+  db.view("user/emails")["rows"].each do |row|
+    doc = row['value']
+    puts "Processing account #{doc['email']}"
+    Resque.enqueue(ImapJob, ENV['HOST'], ENV['IMAP_PORT'], ENV['SSL'] == 'true', doc)
   end
 end

@@ -70,6 +70,16 @@ class ZomgInboxWeb < Sinatra::Base
     redirect "/"
   end
 
+  post "/update" do
+    user = get_user(@access_token)
+    if user['prefix'] != params['prefix']
+      user['prefix'] = params['prefix']
+      @db.save_doc(user)
+    end
+
+    redirect "/"
+  end
+
   helpers do
     def get_user(access_token)
       user = @db.view('user/email_from_token', key: access_token.token)

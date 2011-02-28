@@ -4,5 +4,10 @@
   %body
     %h3 Email
     %p= @user['email']
+    %h3 Prefix
+    %form{action: "/update", method: "post"}
+      %p
+        %input{name: 'prefix', value: @user['prefix']}
+        %input{type: 'submit'}
     %p
       %a{href: "/logout" } Logout
