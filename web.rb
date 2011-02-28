@@ -33,7 +33,7 @@ class ZomgInboxWeb < Sinatra::Base
 
   get "/" do
     if @access_token
-      @email = get_email(@access_token)
+      @user = get_user(@access_token)
       haml :info
     else
       haml :index
@@ -52,17 +52,11 @@ class ZomgInboxWeb < Sinatra::Base
     session[:oauth][:access_token] = @access_token.token
     session[:oauth][:access_token_secret] = @access_token.secret
 
-    email = get_email(@access_token)
-    rows = @db.view("user/emails", key: email)['rows']
-    document = nil
-    if rows.empty?
-      document = { email: email }
-    else
-      document = @db.get(rows.first['id'])
-    end
-    document["token"]        = @access_token.token
-    document["token_secret"] = @access_token.secret
-    @db.save_doc(document)
+    user = get_user(@access_token) || { email: get_email(@access_token) }
+
+    user["token"]        = @access_token.token
+    user["token_secret"] = @access_token.secret
+    @db.save_doc(user)
 
     redirect "/"
   end
@@ -73,21 +67,23 @@ class ZomgInboxWeb < Sinatra::Base
   end
 
   helpers do
-    def get_email(access_token)
-      token_email        = @db.view('user/email_from_token', key: access_token.token)
-      token_secret_email = @db.view('user/email_from_token_secret', key: access_token.secret)
-      if token_email['rows'].any? and token_email['rows'].first['value'] == token_secret_email['rows'].first['value']
+    def get_user(access_token)
+      user = @db.view('user/email_from_token', key: access_token.token)
+      if user['rows'].any? and user['rows'].first['value']['token_secret'] == access_token.secret
         STDOUT.puts "Email read from CouchDB"
-        token_email['rows'].first['value']
+        return user['rows'].first['value']
+      end
+      nil
+    end
+
+    def get_email(access_token)
+      STDOUT.puts "Email queried from google"
+      response = access_token.get('https://www.googleapis.com/userinfo/email?alt=json')
+      if response.is_a?(Net::HTTPSuccess)
+        Yajl.load(response.body)['data']['email']
       else
-        STDOUT.puts "Email queried from google"
-        response = access_token.get('https://www.googleapis.com/userinfo/email?alt=json')
-        if response.is_a?(Net::HTTPSuccess)
-          Yajl.load(response.body)['data']['email']
-        else
-          STDERR.puts "could not get email: #{response.inspect}"
-          nil
-        end
+        STDERR.puts "could not get email: #{response.inspect}"
+        nil
       end
     end
   end

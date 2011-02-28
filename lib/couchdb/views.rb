@@ -7,7 +7,7 @@ user_views = {
     "map" => <<-MAP
       function(doc) {
         if(doc.email) {
-          emit(doc.email)
+          emit(doc.email, doc)
         }
       }
     MAP
@@ -16,16 +16,7 @@ user_views = {
     "map" => <<-MAP
       function(doc) {
         if(doc.email && doc.token) {
-          emit(doc.token, doc.email);
-        }
-      }
-    MAP
-  },
-  "email_from_token_secret" => {
-    "map" => <<-MAP
-      function(doc) {
-        if(doc.email && doc.token_secret) {
-          emit(doc.token_secret, doc.email);
+          emit(doc.token, doc);
         }
       }
     MAP

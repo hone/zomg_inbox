@@ -12,7 +12,7 @@ every(5.minutes, 'run ImapJob') do |job|
   rows = db.view("user/emails")["rows"]
   if rows.any?
     rows.each do |row|
-      doc = db.get(row['id'])
+      doc = row['value']
       puts "Processing account #{doc['email']}"
       Resque.enqueue(ImapJob, ENV['HOST'], ENV['IMAP_PORT'], ENV['SSL'] == 'true' ? true : false, doc['email'], doc['token'], doc['token_secret'])
     end
