@@ -51,7 +51,12 @@ class ZomgInboxWeb < Sinatra::Base
     session[:oauth][:access_token] = @access_token.token
     session[:oauth][:access_token_secret] = @access_token.secret
 
-    user = get_user(@access_token) || { email: get_email(@access_token) }
+    # TODO: handle case where email is nil
+    user = get_user(@access_token) || begin
+      email = get_email(@access_token)
+      result = @db.view('user/emails', key: email)
+      result['rows'].any? ? result['rows'].first['value'] : { email: email }
+    end
 
     user["token"]        = @access_token.token
     user["token_secret"] = @access_token.secret
