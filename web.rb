@@ -32,8 +32,7 @@ class ZomgInboxWeb < Sinatra::Base
   end
 
   get "/" do
-    if @access_token
-      @user = get_user(@access_token)
+    if @access_token and @user = get_user(@access_token)
       haml :info
     else
       haml :index
