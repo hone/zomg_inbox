@@ -1,8 +1,8 @@
 require 'clockwork'
 require 'resque'
-require File.join(File.dirname(__FILE__), 'config/redis_setup')
-require File.join(File.dirname(__FILE__), 'config/couchdb_setup')
-require File.join(File.dirname(__FILE__), 'lib/jobs')
+require_relative 'config/redis_setup'
+require_relative 'config/couchdb_setup'
+require_relative 'lib/jobs'
 
 include Clockwork
 

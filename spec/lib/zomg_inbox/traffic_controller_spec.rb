@@ -1,5 +1,5 @@
-require File.join(File.dirname(__FILE__), "../../spec_helper")
-require File.join(File.dirname(__FILE__), "../../../lib/zomg_inbox/traffic_controller")
+require_relative "../../spec_helper"
+require_relative "../../../lib/zomg_inbox/traffic_controller"
 
 describe TrafficController do
   let(:default_uid) { 57342 }

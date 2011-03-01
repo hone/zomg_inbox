@@ -1,7 +1,7 @@
 require 'net/imap'
 require 'mail'
 require 'gmail_xoauth'
-require File.join(File.dirname(__FILE__), '../zomg_inbox/traffic_controller')
+require_relative '../zomg_inbox/traffic_controller'
 
 class ImapJob
   @queue = :imap

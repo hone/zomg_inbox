@@ -1,1 +1,1 @@
-require File.join(File.dirname(__FILE__), 'jobs/imap_job')
+require_relative 'jobs/imap_job'

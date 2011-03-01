@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'haml'
 require 'oauth'
 require 'yajl'
-require File.join(File.dirname(__FILE__), 'lib/couchdb/views')
+require_relative 'lib/couchdb/views'
 
 class ZomgInboxWeb < Sinatra::Base
   enable :sessions

@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '../../../config/couchdb_setup')
+require_relative '../../config/couchdb_setup'
 
 @db = CONFIG[:couchdb]
 
