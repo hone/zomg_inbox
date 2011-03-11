@@ -1,4 +1,5 @@
 require 'mail'
+require_relative '../mail/parsers/rfc2822'
 
 # figures out what folder the mail should go to
 class TrafficController

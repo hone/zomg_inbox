@@ -1,0 +1,21 @@
+Delivered-To: gog@hone.otherinbox.com
+Received: by 10.100.232.8 with SMTP id e8cs98904anh;
+        Thu, 10 Mar 2011 06:51:22 -0800 (PST)
+Received: by 10.229.119.151 with SMTP id z23mr6330768qcq.2.1299768682151;
+        Thu, 10 Mar 2011 06:51:22 -0800 (PST)
+Return-Path: <newsletter@gog.com>
+Received: from mailA.gog.com (maila.gog.com [67.205.103.154])
+        by mx.google.com with ESMTP id m28si4917893yhg.98.2011.03.10.06.51.21;
+        Thu, 10 Mar 2011 06:51:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of newsletter@gog.com designates 67.205.103.154 as permitted sender) client-ip=67.205.103.154;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of newsletter@gog.com designates 67.205.103.154 as permitted sender) smtp.mail=newsletter@gog.com
+Received: from [127.0.0.1] (ip-70-38-122-70.static.privatedns.com [70.38.122.70])
+  by mailA.gog.com (Postfix) with ESMTP id 9DE6628881A6
+  for <gog@hone.otherinbox.com>; Thu, 10 Mar 2011 09:51:21 -0500 (EST)
+Message-ID: <1299768681.4d78e56994d77@swift.generated>
+Date: Thu, 10 Mar 2011 09:51:21 -0500
+Subject: Heroes of Might & Magic 4 and Might & Magic VII - first Ubisoft
+ treasures retrieved
+From: "GOG.com Team" <newsletter@gog.com>
+To: "" <gog@hone.otherinbox.com>
+MIME-Version: 1.0

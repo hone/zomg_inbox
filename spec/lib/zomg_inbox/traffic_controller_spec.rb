@@ -28,8 +28,18 @@ describe TrafficController do
         TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/blockbuster_header.txt')))
       end
 
-      it "returns the to to address" do
+      it "returns the to address" do
         subject.destination.should == "Blockbuster"
+      end
+
+      context "empty quoted string in to address" do
+        subject do
+          TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/gog_header.txt')))
+        end
+
+        fit "returns the to address" do
+          subject.destination.should == "Gog"
+        end
       end
     end
 
