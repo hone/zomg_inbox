@@ -1,7 +1,7 @@
 source :rubygems
 
 gem "mail"
-gem "resque"
+gem "resque", "1.15.0"
 gem "rake"
 gem "clockwork"
 gem "warden-googleapps"

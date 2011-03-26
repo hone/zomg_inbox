@@ -16,8 +16,7 @@ GEM
       oauth (>= 0.3.6)
     haml (3.0.25)
     i18n (0.5.0)
-    json (1.5.1)
-    json_pure (1.4.6)
+    json (1.4.6)
     linecache19 (0.5.11)
       ruby_core_source (>= 0.1.4)
     mail (2.2.15)
@@ -31,11 +30,11 @@ GEM
     rack (1.2.1)
     rake (0.8.7)
     redis (2.1.1)
-    redis-namespace (0.8.0)
+    redis-namespace (0.10.0)
       redis (< 3.0.0)
-    resque (1.9.10)
-      json_pure (~> 1.4.0)
-      redis-namespace (~> 0.8.0)
+    resque (1.15.0)
+      json (~> 1.4.6)
+      redis-namespace (>= 0.10.0)
       sinatra (>= 0.9.2)
       vegas (~> 0.1.2)
     rest-client (1.6.1)
@@ -86,7 +85,7 @@ DEPENDENCIES
   mail
   oauth
   rake
-  resque
+  resque (= 1.15.0)
   rspec-core (= 2.3.0)
   rspec-expectations (= 2.3.0)
   ruby-debug19
