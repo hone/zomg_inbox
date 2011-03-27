@@ -37,7 +37,7 @@ describe TrafficController do
           TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/gog_header.txt')))
         end
 
-        fit "returns the to address" do
+        it "returns the to address" do
           subject.destination.should == "Gog"
         end
       end
