@@ -28,7 +28,12 @@ class TrafficController
       end
     # default to To address if there isn't something better
     else
-      Mail::Address.new(@headers["To"].value.to_s).local.capitalize
+      to_address = @headers["To"]
+      if to_address
+        Mail::Address.new(to_address.value.to_s).local.capitalize
+      else
+        puts "ERROR: No To address for: #{@headers['Subject']}"
+      end
     end
   end
 end
