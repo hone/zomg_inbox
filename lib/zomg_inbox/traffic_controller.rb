@@ -28,7 +28,7 @@ class TrafficController
       end
     # default to To address if there isn't something better
     else
-      to_address = @headers["To"]
+      to_address = @headers["To"] || @headers["Delivered-To"]
       if to_address
         Mail::Address.new(to_address.value.to_s).local.capitalize
       else

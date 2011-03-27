@@ -87,5 +87,15 @@ describe TrafficController do
       end
 
     end
+
+    context "has no To address" do
+      subject do
+        TrafficController.new(default_uid, File.read(File.join(File.dirname(__FILE__), '../../resources/no_to_address.txt')))
+      end
+
+      it "uses the Delivered-To header" do
+        subject.destination.should == "Proflowers"
+      end
+    end
   end
 end
