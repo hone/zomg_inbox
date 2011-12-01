@@ -2,7 +2,7 @@ source :rubygems
 
 gem "mail"
 # gem "resque", "1.15.0"
-gem "resque", :github => 'hone/resque', :branch => 'keepalive'
+gem "resque", :github => 'hone/resque', :branch => 'heroku'
 gem "rake"
 gem "clockwork"
 gem "warden-googleapps"
